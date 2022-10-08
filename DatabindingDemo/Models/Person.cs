@@ -10,9 +10,30 @@ namespace DatabindingDemo.Models
 {
      public class Person : INotifyPropertyChanged
      {
-          public string Name { get; set; }
-          public string Phone { get; set; }
-          public string Address { get; set; }
+          public string Name
+          {
+               get => name; set
+               {
+                    name = value;
+                    OnPropertyChanged();
+               }
+          }
+          public string Phone
+          {
+               get => phone; set
+               {
+                    phone = value;
+                    OnPropertyChanged();
+               }
+          }
+          public string Address
+          {
+               get => address; set
+               {
+                    address = value;
+                    OnPropertyChanged();
+               }
+          }
 
           public event PropertyChangedEventHandler PropertyChanged;
 
